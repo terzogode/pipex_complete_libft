@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/19 16:15:24 by mbrighi           #+#    #+#             */
+/*   Updated: 2024/11/30 15:55:31 by mbrighi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <string.h>
+#include <stdio.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*pdest;
+	unsigned char	*psrc;
+	size_t			p;
+
+	pdest = (unsigned char *)dest;
+	psrc = (unsigned char *)src;
+	p = 0;
+	if (!dest && !src)
+		return (NULL);
+	while (p < n)
+	{
+		pdest[p] = psrc[p];
+		p++;
+	}
+	return (pdest);
+}
+/* 
+int	main(void)
+{
+	char	src[] = "abcdefghi";
+	char	dest[10];
+	int		n;
+
+	n = 5;
+	ft_memcpy(dest, src, n);
+	printf("src e' %s\n", src);
+	printf("dest e' %s", dest);
+	return (0);
+} */
