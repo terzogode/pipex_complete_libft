@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:22:19 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/26 23:54:31 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/03/28 17:15:59 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	*pathfinder(char *cmd, char **envp)
 		free (final_path);
 		i++;
 	}
-	if (access(cmd, F_OK | X_OK) == 0)
+	if (access(cmd, F_OK | X_OK | R_OK ) == 0)
 		return (freepath(first_path), cmd);
 	return (freepath(first_path), NULL);
 }
@@ -45,7 +45,7 @@ void	child(char **argv, int *mfd, char **envp)
 {
 	int	fd;
 
-	fd = open_file(argv[1], 0);
+	fd = open_file(argv[1], 0, mfd);
 	dup2(fd, 0);
 	close(fd);
 	dup2(mfd[1], 1);
@@ -58,7 +58,7 @@ void	daddy(char **argv, int *mfd, char **envp)
 {
 	int	fd;
 
-	fd = open_file(argv[4], 1);
+	fd = open_file(argv[4], 1, mfd);
 	dup2(fd, 1);
 	close(fd);
 	dup2(mfd[0], 0);
@@ -83,7 +83,7 @@ void	exeggcute(const char *argv, char **envp)
 		error();
 	}
 	if (execve(path, command, envp) == -1)
-		errorexec(command, path);
+		errorexec(command);
 }
 
 int	main(int argc, char **argv, char **envp)

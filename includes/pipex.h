@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:30:46 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/22 21:02:35 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/03/28 17:15:55 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	exeggcute(const char *argv, char **envp);
 //utils
 void	error(void);
 void	errorcmd(void);
-void	errorexec(char **command, char *path);
+void	errorexec(char **command);
 void	*freepath(char **first_path);
-int		open_file(char *file, int in_or_out);
+int		open_file(char *file, int in_or_out, int *mfd);
 
 #endif

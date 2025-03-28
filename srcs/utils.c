@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 20:59:01 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/25 16:48:52 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/03/28 17:15:44 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,22 @@ void	errorcmd(void)
 	exit(1);
 }
 
-void	errorexec(char **command, char *path)
+void	errorexec(char **command)
 {
 	int	index;
 
-	index = -1;
-	free(path);
-	while (command[++index])
-		free(command[index]);
-	free(command);
+	index = 0;
+	if (command[index] && command[index] != NULL)
+	{
+		while (command[index] != NULL)
+		{
+			if (command[index] != NULL)
+				free(command[index]);
+			index++;
+		}
+	}
+	if (command != NULL)
+		free(command);
 	error();
 }
 
@@ -49,7 +56,7 @@ void	*freepath(char **first_path)
 	return (NULL);
 }
 
-int	open_file(char *file, int in_or_out)
+int	open_file(char *file, int in_or_out, int *mfd)
 {
 	int	ret;
 
@@ -60,6 +67,8 @@ int	open_file(char *file, int in_or_out)
 	if (ret == -1)
 	{
 		perror("Can't touch this");
+		close(mfd[0]);
+		close(mfd[1]);
 		exit(1);
 	}
 	return (ret);
