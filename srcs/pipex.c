@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:22:19 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/28 17:49:45 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/03/31 15:36:14 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	*pathfinder(char *cmd, char **envp)
 		free (final_path);
 		i++;
 	}
-	if (access(cmd, F_OK | X_OK | R_OK ) == 0)
+	if (access(cmd, F_OK | X_OK | R_OK) == 0)
 		return (freepath(first_path), ft_strdup(cmd));
 	return (freepath(first_path), NULL);
 }
