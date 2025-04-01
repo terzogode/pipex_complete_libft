@@ -6,40 +6,11 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 18:22:19 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/31 15:36:14 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/01 19:07:01 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-void	*pathfinder(char *cmd, char **envp)
-{
-	int		i;
-	char	*final_path;
-	char	**first_path;
-	char	*cmonanotherpath;
-
-	i = 0;
-	if (!cmd || !envp)
-		return (NULL);
-	while (ft_strnstr(envp[i], "PATH", 4) == 0)
-		i++;
-	first_path = ft_split(envp[i] + 5, ':');
-	i = 0;
-	while (first_path[i])
-	{
-		cmonanotherpath = ft_strjoin(first_path[i], "/");
-		final_path = ft_strjoin(cmonanotherpath, cmd);
-		free (cmonanotherpath);
-		if (access(final_path, F_OK | X_OK) == 0)
-			return (freepath(first_path), final_path);
-		free (final_path);
-		i++;
-	}
-	if (access(cmd, F_OK | X_OK | R_OK) == 0)
-		return (freepath(first_path), ft_strdup(cmd));
-	return (freepath(first_path), NULL);
-}
 
 void	child(char **argv, int *mfd, char **envp)
 {
@@ -76,7 +47,7 @@ void	exeggcute(const char *argv, char **envp)
 	command = ft_split(argv, ' ');
 	if (!command)
 		errorcmd();
-	path = pathfinder(command[0], envp);
+	path = pathfinder(*command, envp);
 	if (!path)
 	{
 		freepath(command);

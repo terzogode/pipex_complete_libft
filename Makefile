@@ -6,13 +6,13 @@
 #    By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 11:07:37 by gcollet           #+#    #+#              #
-#    Updated: 2025/03/24 17:23:56 by mbrighi          ###   ########.fr        #
+#    Updated: 2025/04/01 12:38:25 by mbrighi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PROG	= pipex
 
-SRCS 	= srcs/pipex.c srcs/utils.c
+SRCS 	= srcs/pipex.c srcs/utils.c srcs/errors.c
 OBJS 	= ${SRCS:.c=.o}
 MAIN	= srcs/pipex.c
 

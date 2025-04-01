@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:28:42 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/21 21:25:46 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/01 18:59:42 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	k_idx = 0;
 	k = ft_calloc((counter + 1), sizeof(char *));
+	if (!k)
+		return (NULL);
 	while (k_idx < counter)
 	{
-		if (!k)
-			return (NULL);
 		h = 0;
 		while (s[j] == c)
 			j++;
