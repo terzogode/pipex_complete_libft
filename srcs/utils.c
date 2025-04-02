@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 20:59:01 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/04/01 19:06:37 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/02 22:16:14 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,31 @@ int	open_file(char *file, int in_or_out, int *mfd)
 	return (ret);
 }
 
-char	*ft_strjoingnl(char *s1, char *s2)
+char	*ft_strjoinpipex(char *s1, char *s2)
 {
-	int				is1;
-	int				is2;
+	int				idx_1;
+	int				idx_2;
 	unsigned char	*l;
 
-	is1 = 0;
-	is2 = 0;
+	idx_1 = 0;
+	idx_2 = 0;
 	if (!s1)
 		return (ft_strdup(s2));
 	l = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!l)
 		return (NULL);
-	while (s1[is1])
+	while (s1[idx_1])
 	{
-		l[is1] = s1[is1];
-		is1++;
+		l[idx_1] = s1[idx_1];
+		idx_1++;
 	}
 	free (s1);
-	while (s2[is2])
+	while (s2[idx_2])
 	{
-		l[is1 + is2] = s2[is2];
-		is2++;
+		l[idx_1 + idx_2] = s2[idx_2];
+		idx_2++;
 	}
-	l[is1 + is2] = '\0';
+	l[idx_1 + idx_2] = '\0';
 	return ((char *)l);
 }
 
@@ -80,7 +80,7 @@ void	*pathfinder(char *cmd, char **envp)
 	i = 0;
 	if (!cmd || !envp)
 		return (NULL);
-	if (access(cmd, F_OK | X_OK | R_OK) == 0)
+	if (ft_strchr(cmd, '/') && access(cmd, F_OK | X_OK | R_OK) == 0)
 		return (ft_strdup(cmd));
 	while (envp[i] && ft_strnstr(envp[i], "PATH=", 5) == 0)
 		i++;
@@ -90,7 +90,7 @@ void	*pathfinder(char *cmd, char **envp)
 	i = -1;
 	while (first_path && first_path[++i])
 	{
-		final_path = alt_access(cmd, *first_path);
+		final_path = alt_access(cmd, first_path[i]);
 		if (final_path)
 			return (freepath(first_path), final_path);
 	}
@@ -102,8 +102,9 @@ char	*alt_access(char *cmd, char *path)
 	char	*final_path;
 
 	final_path = ft_strjoin(path, "/");
-	final_path = ft_strjoingnl(final_path, cmd);
+	final_path = ft_strjoinpipex(final_path, cmd);
 	if (access(final_path, F_OK | X_OK) == 0)
 		return (final_path);
+	free(final_path);
 	return (NULL);
 }

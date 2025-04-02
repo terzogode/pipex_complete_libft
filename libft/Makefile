@@ -14,9 +14,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strstr.c \
 		ft_printf/ft_hexlowercase.c ft_printf/ft_hexuppercase.c \
 		ft_printf/ft_printf.c ft_printf/ft_putchar.c ft_printf/ft_putptr.c \
-		ft_printf/ft_putstr.c ft_printf/ft_putnbr.c ft_printf/ft_putunsnbr.c \
-		get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
-		
+		ft_printf/ft_putstr.c ft_printf/ft_putnbr.c ft_printf/ft_putunsnbr.c 
 
 OBJECT = $(SRC:.c=.o)
 
