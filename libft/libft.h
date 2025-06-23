@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:24:02 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/06/23 22:56:11 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/06/23 22:59:05 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
-# endif
-
-# ifndef DEBUG
-#  define DEBUG 0
 # endif
 
 # include <string.h>

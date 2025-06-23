@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 12:49:10 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/21 15:10:45 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/06/23 22:57:26 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,59 @@ void	ft_checkfiletype(va_list argp, const char ptr, int *counter)
 		*counter += write(1, "%", 1);
 }
 
-int	ft_printf(const char *ptr, ...)
+int	printf_body(int fd, const char *ptr, va_list *args)
 {
-	int		counter;
-	va_list	argp;
+	int			count;
 
-	counter = 0;
-	if (!ptr)
-		return (-1);
-	va_start(argp, ptr);
+	count = 0;
 	while (*ptr)
 	{
 		if (*ptr == '%')
 		{
 			ptr++;
-			ft_checkfiletype(argp, *ptr, &counter);
+			count += ft_printf_check(fd, *ptr, args);
 			ptr++;
 		}
 		else
 		{
-			ft_putchar(*ptr);
+			count += ft_putchar_pf(fd, *ptr);
 			ptr++;
-			counter++;
 		}
 	}
-	va_end(argp);
-	return (counter);
+	return (count);
+}
+
+int	printf_debug(const char *str, ...)
+{
+	va_list		args;
+	int			count;
+
+	if (!DEBUG)
+		return (-1);
+	va_start(args, str);
+	count = printf_body(2, str, &args);
+	va_end(args);
+	return (count);
+}
+
+int	fd_printf(int fd, const char *str, ...)
+{
+	va_list		args;
+	int			count;
+
+	va_start(args, str);
+	count = printf_body(fd, str, &args);
+	va_end(args);
+	return (count);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	va_list		args;
+	int			count;
+
+	va_start(args, str);
+	count = printf_body(1, str, &args);
+	va_end(args);
+	return (count);
 }

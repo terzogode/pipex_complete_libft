@@ -6,12 +6,16 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:20:52 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/06/23 22:56:16 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/06/23 22:59:01 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+# ifndef DEBUG
+#  define DEBUG 0
+# endif
 
 # include <stdarg.h>
 # include <unistd.h>
