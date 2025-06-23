@@ -6,12 +6,10 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 11:36:28 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/11/30 16:01:11 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:23:05 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

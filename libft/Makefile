@@ -11,7 +11,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_strstr.c \
+		ft_strstr.c get_next_line.c get_next_line_utils.c\
 		ft_printf/ft_hexlowercase.c ft_printf/ft_hexuppercase.c \
 		ft_printf/ft_printf.c ft_printf/ft_putchar.c ft_printf/ft_putptr.c \
 		ft_printf/ft_putstr.c ft_printf/ft_putnbr.c ft_printf/ft_putunsnbr.c 

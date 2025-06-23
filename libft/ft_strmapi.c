@@ -6,12 +6,9 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 11:43:42 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/11/29 19:44:11 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:22:54 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
 
 #include "libft.h"
 

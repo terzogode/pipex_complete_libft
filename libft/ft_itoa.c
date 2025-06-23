@@ -6,12 +6,10 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:00:48 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/08 14:03:45 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:24:42 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 static int	len(int n)

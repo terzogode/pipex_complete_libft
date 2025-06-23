@@ -6,11 +6,11 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:04:19 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/05 19:01:53 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:23:48 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 /* void	ft_letstry(unsigned int c, char *s)
 {

@@ -6,13 +6,10 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:23:03 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/03 16:06:59 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:22:25 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 static	int	ft_check(const char *s1, char s2)

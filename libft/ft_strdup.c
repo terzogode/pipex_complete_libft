@@ -6,26 +6,11 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 17:31:09 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/11/29 15:25:37 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:23:55 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-static size_t	ft_strlen(const char *s)
-{
-	size_t	lenght;
-
-	lenght = 0;
-	while (*s != '\0')
-	{
-		s++;
-		lenght++;
-	}
-	return (lenght);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

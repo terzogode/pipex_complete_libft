@@ -6,11 +6,11 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:35:30 by mbrighi           #+#    #+#             */
-/*   Updated: 2025/03/22 18:16:52 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/04/07 20:22:59 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

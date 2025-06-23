@@ -6,7 +6,7 @@
 /*   By: mbrighi <mbrighi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 12:20:52 by mbrighi           #+#    #+#             */
-/*   Updated: 2024/12/18 15:39:30 by mbrighi          ###   ########.fr       */
+/*   Updated: 2025/06/23 22:56:16 by mbrighi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@ int	ft_hexlowercase(unsigned int n);
 int	ft_hexuppercase(unsigned int n);
 int	ft_putptr(void *ptr);
 int	ft_putunsnbr(unsigned int n);
+int	printf_body(int fd, const char *ptr, va_list *args);
+int	printf_debug(const char *str, ...);
+int	fd_printf(int fd, const char *str, ...);
+int	ft_printf(const char *str, ...);
 
 #endif
